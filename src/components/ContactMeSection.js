@@ -58,6 +58,7 @@ const LandingSection = () => {
       backgroundColor="#512DA8"
       py={16}
       spacing={8}
+      id="contact-me"
     >
       <VStack w="1024px" p={32} alignItems="flex-start">
         <Heading as="h1" id="contactme-section">
@@ -75,6 +76,7 @@ const LandingSection = () => {
                   name="firstName"
                   onChange={formik.handleChange}
                   value={formik.values.firstName}
+                  {...formik.getFieldProps("firstName")}
                 />
                 <FormErrorMessage>{formik.errors.firstName}</FormErrorMessage>
               </FormControl>
@@ -88,6 +90,7 @@ const LandingSection = () => {
                   type="email"
                   onChange={formik.handleChange}
                   value={formik.values.email}
+                  {...formik.getFieldProps("email")}
                 />
                 <FormErrorMessage>{formik.errors.email}</FormErrorMessage>
               </FormControl>
@@ -98,6 +101,7 @@ const LandingSection = () => {
                   name="type"
                   onChange={formik.handleChange}
                   value={formik.values.type}
+                  {...formik.getFieldProps("type")}
                 >
                   <option value="hireMe">Freelance project proposal</option>
                   <option value="openSource">
@@ -116,6 +120,7 @@ const LandingSection = () => {
                   height={250}
                   onChange={formik.handleChange}
                   value={formik.values.comment}
+                  {...formik.getFieldProps("comment")}
                 />
                 <FormErrorMessage>{formik.errors.comment}</FormErrorMessage>
               </FormControl>
